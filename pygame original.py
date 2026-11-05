@@ -195,6 +195,9 @@ class AirHockey:
         self.screen.blit(p_txt, (SCREEN_WIDTH // 4, 30)) #pixels are being converted from the text to main screen surface at a position from the source which are the 2 attributes.
         self.screen.blit(ai_txt, (SCREEN_WIDTH * 3 // 4, 30)) # block image transfer
 
+        year_txt = self.small_font.render("2026", True, GRAY)
+        self.screen.blit(year_txt, year_txt.get_rect(midleft=(SCREEN_WIDTH // 2 + 15, SCREEN_HEIGHT - 15)))
+
 
         if self.game_over:
             w_txt = self.font.render(self.winner, True, WHITE)
