@@ -18,6 +18,7 @@ BALL_SPEED = 6
 WINNING_SCORE = 5
 
 WHITE = (255, 255, 255)
+RED = (255, 0, 0)
 BLACK = (0, 0, 0)
 GRAY = (100, 100, 100)
 
@@ -183,7 +184,7 @@ class AirHockey:
             self.winner = "You Win!" if self.player_score >= WINNING_SCORE else "Computer Wins!"
 
     def draw(self):
-        self.screen.fill(BLACK) #background is fully kept black
+        self.screen.fill(RED) #background is fully kept black
         for y in range(0, SCREEN_HEIGHT, 30): #after research, the range function has 3 attributes
             pygame.draw.rect(self.screen, GRAY, (SCREEN_WIDTH // 2 - 2, y, 4, 20)) #middle line kept in center, y is the top edge of the line, each dash is 4 pixels wide and 20 pixels long. as each step is 30 pixels, it creates a 10 pixel gap between each.
 
@@ -194,7 +195,6 @@ class AirHockey:
         ai_txt = self.font.render(str(self.ai_score), True, WHITE)
         self.screen.blit(p_txt, (SCREEN_WIDTH // 4, 30)) #pixels are being converted from the text to main screen surface at a position from the source which are the 2 attributes.
         self.screen.blit(ai_txt, (SCREEN_WIDTH * 3 // 4, 30)) # block image transfer
-
 
         if self.game_over:
             w_txt = self.font.render(self.winner, True, WHITE)
