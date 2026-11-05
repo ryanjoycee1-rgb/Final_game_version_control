@@ -13,7 +13,7 @@ PADDLE_SPEED = 7
 AI_SPEED = 5
 
 BALL_SIZE = 15
-BALL_SPEED = 6
+BALL_SPEED = 12
 
 WINNING_SCORE = 5
 
@@ -194,7 +194,6 @@ class AirHockey:
         ai_txt = self.font.render(str(self.ai_score), True, WHITE)
         self.screen.blit(p_txt, (SCREEN_WIDTH // 4, 30)) #pixels are being converted from the text to main screen surface at a position from the source which are the 2 attributes.
         self.screen.blit(ai_txt, (SCREEN_WIDTH * 3 // 4, 30)) # block image transfer
-
 
         if self.game_over:
             w_txt = self.font.render(self.winner, True, WHITE)
